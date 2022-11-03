@@ -14,8 +14,12 @@ function handleClick(event) {
     let square = event.target
     let position = square.id 
 
+    if(handleMove(position)){
+        setTimeout(() =>{
+            alert(`O jogo terminou! \nO ganhador foi ${playerTame == 0 ? "\🛡️" : "\⚔️"} \nCom a jogada: ${sequencia}`)
+        })
+    }
     
-    handleMove(position)
     uppdateSquares();
 };
 

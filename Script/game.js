@@ -3,6 +3,7 @@ let board = ['', '', '', '', '', '', '', '', ''];
 let playerTame = 0;
 let symbols = ["o", "x"];
 let endGame = false;
+let sequencia = [];
 let winState = [
     [0, 1, 2],
     [3, 4, 5],
@@ -41,10 +42,13 @@ function handleMove(position) {
     return endGame;
 };
 
+//verifica o vencedor
 function isWin() {
 
     for (let i = 0; i < winState.length; i++) {
         let sequence = winState[i];
+
+        sequencia = sequence;
 
         let position1 = sequence[0];
         let position2 = sequence[1];
