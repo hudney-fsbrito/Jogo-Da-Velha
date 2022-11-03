@@ -20,7 +20,7 @@ function handleMove(position) {
 
     if (endGame) {
         return;
-    }
+    };
 
 
     if (board[position] == '') {
@@ -46,6 +46,7 @@ function handleMove(position) {
 function isWin() {
 
     for (let i = 0; i < winState.length; i++) {
+
         let sequence = winState[i];
 
         sequencia = sequence;
@@ -58,7 +59,18 @@ function isWin() {
             board[position1] == board[position3] &&
             board[position1] != '') {
             return true;
-        }
-    }
+        };
+    };
     return false;
-}
+};
+
+function resetGame(button) {
+
+    if (button) {
+
+        board = ['', '', '', '', '', '', '', '', ''];
+        playerTame = 0;
+        endGame = false;
+
+    };
+};
