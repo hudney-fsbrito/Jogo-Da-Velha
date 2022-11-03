@@ -9,9 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+//Clica e faz o movimento do jogador
 function handleClick(event) {
     let square = event.target
     let position = square.id 
 
-    console.log(position);
-}
+    handleMove(position);
+    uppdateSquares();
+};
+
+function uppdateSquares() {
+    let squares = document.querySelectorAll(".square");
+    
+    
+    squares.forEach((square) => {
+        let position = square.id
+        let symbols = board[position];
+        if (symbols != '') {
+            square.innerHTML = `<div class="${symbols}"></div>`
+        };
+    });
+};
