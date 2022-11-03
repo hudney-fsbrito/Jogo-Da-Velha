@@ -14,7 +14,8 @@ function handleClick(event) {
     let square = event.target
     let position = square.id 
 
-    handleMove(position);
+    
+    handleMove(position)
     uppdateSquares();
 };
 
